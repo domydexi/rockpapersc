@@ -45,6 +45,41 @@ function playRound(playerSelection, computerSelection) {
     return answer;
 }
 
-let playerSelection = "roCk";
-let computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+
+    let computerSelection = computerPlay();
+    let roundWin = "";
+    let scorePlayer = 0;
+    let scoreCPU = 0;
+
+    for(let i = 0; i < 5; i++){
+
+        let playerSelection = prompt("Enter Rock, Paper or Scissors: ");
+        roundWin = playRound(playerSelection, computerSelection);
+
+        console.log(roundWin);
+
+        if(roundWin.includes("You win!")) {
+            scorePlayer += 1;
+        }
+        else if(roundWin.includes("You lose!")) {
+            scoreCPU += 1;
+        }
+        else {
+            scoreCPU += 0;
+            scorePlayer += 0;
+        }
+
+        console.log("You: " + scorePlayer + "\n" + "CPU: " + scoreCPU);
+    }
+
+    if (scoreCPU > scorePlayer){
+        console.log("The Computer wins!");
+    }
+    else {
+        console.log("You win!");
+    }
+
+}
+
+game();
