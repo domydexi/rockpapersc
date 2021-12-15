@@ -4,12 +4,16 @@ function computerPlay() {
     let wordSelect = words[Math.floor(Math.random() * words.length)];
 
     return wordSelect;
+
 }
 
 function playRound(playerSelection, computerSelection) {
 
     let player1 = playerSelection.toLowerCase();
     let cpu1 = computerSelection.toLowerCase();
+
+    console.log(cpu1);
+
     let answer = "";
     
     switch(player1) {
@@ -47,7 +51,6 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
-    let computerSelection = computerPlay();
     let roundWin = "";
     let scorePlayer = 0;
     let scoreCPU = 0;
@@ -55,6 +58,8 @@ function game() {
     for(let i = 0; i < 5; i++){
 
         let playerSelection = prompt("Enter Rock, Paper or Scissors: ");
+        let computerSelection = computerPlay();
+        
         roundWin = playRound(playerSelection, computerSelection);
 
         console.log(roundWin);
