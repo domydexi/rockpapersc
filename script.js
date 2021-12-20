@@ -1,4 +1,16 @@
-function computerPlay() {
+
+const buttons = document.querySelectorAll(".play-button");
+
+buttons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+        console.log((button.id));
+    })
+})
+
+
+
+/*function computerPlay() {
 
     var words = ["Rock", "Paper", "Scissors"];
     let wordSelect = words[Math.floor(Math.random() * words.length)];
@@ -9,7 +21,7 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
 
-    let player1 = playerSelection.toLowerCase();
+    let player1 = "";
     let cpu1 = computerSelection.toLowerCase();
 
     console.log(cpu1);
@@ -47,44 +59,4 @@ function playRound(playerSelection, computerSelection) {
     }
 
     return answer;
-}
-
-function game() {
-
-    let roundWin = "";
-    let scorePlayer = 0;
-    let scoreCPU = 0;
-
-    for(let i = 0; i < 5; i++){
-
-        let playerSelection = prompt("Enter Rock, Paper or Scissors: ");
-        let computerSelection = computerPlay();
-        
-        roundWin = playRound(playerSelection, computerSelection);
-
-        console.log(roundWin);
-
-        if(roundWin.includes("You win!")) {
-            scorePlayer += 1;
-        }
-        else if(roundWin.includes("You lose!")) {
-            scoreCPU += 1;
-        }
-        else {
-            scoreCPU += 0;
-            scorePlayer += 0;
-        }
-
-        console.log("You: " + scorePlayer + "\n" + "CPU: " + scoreCPU);
-    }
-
-    if (scoreCPU > scorePlayer){
-        console.log("The Computer wins!");
-    }
-    else {
-        console.log("You win!");
-    }
-
-}
-
-game();
+}*/
