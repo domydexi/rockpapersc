@@ -77,6 +77,7 @@ function scoreBoard(answer, round, playerScore, computerScore) {
     
 }
 
+//Announces the winner
 function winner(playerScore, computerScore) {
 
     const scoreBoard = document.querySelector("#text");
