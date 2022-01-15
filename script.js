@@ -10,7 +10,18 @@ let computerScore = 0;
 function computerPlay() {
 
     var words = ["Rock", "Paper", "Scissors"];
-    let wordSelect = words[Math.floor(Math.random() * words.length)];
+    let wordSelect = "";
+    let randomChoice = Math.floor(Math.random(words.length) * 200);
+
+    console.log(randomChoice);
+
+    if (randomChoice % 3 == 0) {
+        wordSelect = "Rock";
+    } else if (randomChoice % 3 == 1) {
+        wordSelect = "Paper";
+    } else {
+        wordSelect = "Scissors";
+    }
 
     return wordSelect;
 
